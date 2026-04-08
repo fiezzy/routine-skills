@@ -37,9 +37,11 @@ For each ticket:
 - Use `mcp__atlassian__getJiraIssue` with `cloudId` from `mcp__atlassian__getAccessibleAtlassianResources`
 - Extract: summary, description, attachments, comments
 - Print a short summary of the ticket to the user
-- **Assign ticket and update status** (run in parallel):
-  - Use `mcp__atlassian__editJiraIssue` to set assignee to Maks Zhers (accountId: `712020:65332aee-84f4-4fe1-9775-0a8886e43490`)
-  - Use `mcp__atlassian__transitionJiraIssue` with transition id `571` ("Development In Progress")
+- **Assign ticket and update status**:
+  - First, get the current authenticated user's `accountId` via `mcp__atlassian__getMyself`
+  - Then run in parallel:
+    - Use `mcp__atlassian__editJiraIssue` to set assignee to the authenticated user's `accountId`
+    - Use `mcp__atlassian__transitionJiraIssue` with transition id `571` ("Development In Progress")
 
 #### 1b. Investigate the codebase
 
