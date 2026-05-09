@@ -1,21 +1,34 @@
 # routine-skills
 
-Personal collection of [Claude Code](https://claude.com/claude-code) slash-commands I use across projects to automate routine engineering work.
+Personal collection of [Claude Code](https://claude.com/claude-code) skills I use across projects to automate routine engineering work.
 
-Not a framework. Not a library. Just working `.md` files I drop into projects and adapt. Sharing publicly in case the patterns are useful as a starting point.
+Not a framework. Not a library. Just working `SKILL.md` files I drop into projects and adapt. Sharing publicly in case the patterns are useful as a starting point.
 
 ## What's here
 
 | Skill | What it does |
 |---|---|
-| [`adopt-code.md`](./adopt-code.md) | Audit a PR against project conventions, produce a refactor plan, optionally apply (sequential or via parallel teammates) |
-| [`bugfix.md`](./bugfix.md) | Batch-process Jira bug tickets — fetch, fix, branch, PR |
-| [`jira-spec-builder.md`](./jira-spec-builder.md) | Turn a high-level change into a decomposed Jira ticket structure (epic → stories → tasks) via repo crawl + business interview |
-| [`pr-review-fix.md`](./pr-review-fix.md) | Read PR review comments, apply fixes, reply to reviewers, resolve threads |
+| [`adopt-code`](./adopt-code/) | Audit a PR against project conventions, produce a refactor plan, optionally apply (sequential or via parallel teammates) |
+| [`bugfix`](./bugfix/) | Batch-process Jira bug tickets — fetch, fix, branch, PR |
+| [`jira-spec-builder`](./jira-spec-builder/) | Turn a high-level change into a decomposed Jira ticket structure (epic → stories → tasks) via repo crawl + business interview |
+| [`pr-review-fix`](./pr-review-fix/) | Read PR review comments, apply fixes, reply to reviewers, resolve threads |
+
+## Layout
+
+Each skill lives in its own directory:
+
+```
+<skill-name>/
+└── SKILL.md
+```
+
+Supporting files (examples, scripts, screenshots) can live alongside `SKILL.md` as the skill grows.
 
 ## How to use
 
-Drop the file into your project's `.claude/commands/` directory (or the global `~/.claude/commands/`). Invoke with `/<skill-name> <args>`. Each file has frontmatter with `description` and `argument-hint`.
+**As Claude Code skills (recommended).** Copy the skill directory into your project's `.claude/skills/` (or the global `~/.claude/skills/`). The model picks the relevant skill based on context and the `description` in its frontmatter.
+
+**As slash commands.** Copy `<skill>/SKILL.md` to `.claude/commands/<skill>.md` (or the global equivalent), then invoke with `/<skill> <args>`. Each skill's frontmatter has an `argument-hint` showing what's expected.
 
 ## Notes on portability
 
