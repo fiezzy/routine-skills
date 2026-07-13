@@ -9,6 +9,7 @@ Not a framework. Not a library. Just working `SKILL.md` files I drop into projec
 | Skill | What it does |
 |---|---|
 | [`adopt-code`](./adopt-code/) | Audit a PR against project conventions, produce a refactor plan, optionally apply (sequential or via parallel teammates) |
+| [`audio-transcript`](./audio-transcript/) | Transcribe an audio/video file to plain text locally with whisper.cpp (ffmpeg preprocessing), print the transcript into the session |
 | [`bugfix`](./bugfix/) | Batch-process Jira bug tickets — fetch, fix, branch, PR |
 | [`jira-spec-builder`](./jira-spec-builder/) | Turn a high-level change into a decomposed Jira ticket structure (epic → stories → tasks) via repo crawl + business interview |
 | [`pr-review-fix`](./pr-review-fix/) | Read PR review comments, apply fixes, reply to reviewers, resolve threads |
